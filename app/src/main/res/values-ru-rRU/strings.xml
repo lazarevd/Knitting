@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Knitting</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="default_dummy"></string>
+    <!--свитер-->
+    <string name="pullover_sleeve">рукав</string>
+    <string name="pullover_width">ширина</string>
+    <string name="pullover_height">длинна</string>
+    <string name="pullover_sleeve_help">Длинна рукава от манжеты до подмышки</string>
+    <string name="pullover_width_help">Ширина в районе груди</string>
+    <string name="pullover_height_help">Длинна от воротника до нижней кромки(хз как оно зовется)</string>
+</resources>
