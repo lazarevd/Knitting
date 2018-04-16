@@ -3,11 +3,17 @@ package ru.laz.knitting;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Spinner;
 
 import java.util.HashMap;
 
+import ru.laz.knitting.custom_view.LoopSelector;
+import ru.laz.knitting.custom_view.ParameterEntry;
+
 public class Pullover extends BaseActivity {
+
+    ParameterEntry paeWidtth;
+    Spinner loopSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +21,18 @@ public class Pullover extends BaseActivity {
         setContentView(R.layout.activity_pullover);
         setBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sviter));
         View topView = (View) findViewById(R.id.include_topping);
-        ImageView imageView = (ImageView) topView.findViewById(R.id.topImageView);
-        setBitmapToImageView(imageView, this.imageBitmap, "normal", bitmapCoords, screenDensity);
+        //ImageView imageView = (ImageView) topView.findViewById(R.id.topImageView);
+        //setBitmapToImageView(imageView, this.imageBitmap, "normal", bitmapCoords, screenDensity);
+
+        ParameterEntry paeWidtth = (ParameterEntry) findViewById(R.id.paramentry_width);
+        paeWidtth.getValueText();
+
+        loopSpinner = (Spinner) findViewById(R.id.loopSpinner);
+
+
+        loopSpinner = LoopSelector.genLoopSelector(this, loopSpinner);
+
+
 
     }
 

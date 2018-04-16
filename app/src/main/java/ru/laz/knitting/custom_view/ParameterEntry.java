@@ -22,8 +22,8 @@ public class ParameterEntry extends LinearLayout {
     String helpTextStr = "";
 
     TextView descriptionText;
-
     EditText valueText;
+
     ImageButton helpBtn;
 
 
@@ -38,7 +38,11 @@ public class ParameterEntry extends LinearLayout {
         linkAttrs(context, attrs);
         initDescription(descrTextStr);
         initHelpButton(helpTextStr);
+        valueText = (EditText) findViewById(R.id.editTextValue);
     }
+
+
+
 
 
     private void initDescription(String descr){
@@ -66,12 +70,13 @@ public class ParameterEntry extends LinearLayout {
         ta.recycle();
     }
 
-    public EditText getValueText() {
-        return valueText;
+
+    public String getValueText() {
+        return valueText.getText().toString();
     }
 
-    public void setValueText(EditText valueText) {
-        this.valueText = valueText;
+    public void setValueText(String valueText) {
+        this.valueText.setText(valueText);
     }
 
 

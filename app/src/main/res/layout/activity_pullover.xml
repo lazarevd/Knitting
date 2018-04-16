@@ -27,22 +27,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include
-                layout="@layout/toppics"
-                android:id="@+id/toppics_included"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="8dp" />
-
             <ru.laz.knitting.custom_view.ParameterEntry
+                android:id="@+id/paramentry_width"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 custom:description="@string/pullover_width"
-                custom:value=""
-                custom:help="@string/pullover_width_help" />
+                custom:help="@string/pullover_width_help"
+                custom:value="">
+
+            </ru.laz.knitting.custom_view.ParameterEntry>
+
+            <Spinner
+                android:id="@+id/loopSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="293dp" />
+
 
         </LinearLayout>
     </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>

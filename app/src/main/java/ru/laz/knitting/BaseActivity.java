@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import java.util.HashMap;
 
@@ -13,6 +14,7 @@ public abstract class BaseActivity extends Activity {
     float screenDensity = 1.0f;
     HashMap<String,Integer[]> bitmapCoords = new HashMap<String,Integer[]>();
     Bitmap imageBitmap = null;
+    Spinner loopType;
 
 
 
@@ -41,6 +43,9 @@ public abstract class BaseActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
     }
+
+
+
 
 
     protected abstract HashMap<String,Integer[]> makeBitmapCoords(float density);

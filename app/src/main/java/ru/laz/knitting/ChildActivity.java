@@ -2,8 +2,6 @@ package ru.laz.knitting;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
 import java.util.HashMap;
 
@@ -14,9 +12,8 @@ public class ChildActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child);
         setBitmap(BitmapFactory.decodeResource(getResources(),R.drawable.sviter));
-        View topView = (View) findViewById(R.id.toppics_included);
-        ImageView imageView = (ImageView) topView.findViewById(R.id.topImageView);
-        setBitmapToImageView(imageView, this.imageBitmap, "normal", bitmapCoords, screenDensity);
+
+
     }
 
     @Override
