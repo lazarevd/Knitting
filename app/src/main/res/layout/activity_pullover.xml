@@ -33,9 +33,21 @@
                 android:layout_height="match_parent"
                 custom:description="@string/pullover_width"
                 custom:help="@string/pullover_width_help"
-                custom:value="">
-
-            </ru.laz.knitting.custom_view.ParameterEntry>
+                custom:value="" />
+            <ru.laz.knitting.custom_view.ParameterEntry
+                android:id="@+id/paramentry_height"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                custom:description="@string/pullover_height"
+                custom:help="@string/pullover_height_help"
+                custom:value="" />
+            <ru.laz.knitting.custom_view.ParameterEntry
+                android:id="@+id/paramentry_sleeve"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                custom:description="@string/pullover_sleeve"
+                custom:help="@string/pullover_sleeve_help"
+                custom:value="" />
 
             <Spinner
                 android:id="@+id/loopSpinner"

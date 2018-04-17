@@ -25,6 +25,8 @@ public class Pullover extends BaseActivity {
         //setBitmapToImageView(imageView, this.imageBitmap, "normal", bitmapCoords, screenDensity);
 
         ParameterEntry paeWidtth = (ParameterEntry) findViewById(R.id.paramentry_width);
+        ParameterEntry paeHeight = (ParameterEntry) findViewById(R.id.paramentry_height);
+        ParameterEntry paeSleeve = (ParameterEntry) findViewById(R.id.paramentry_sleeve);
         paeWidtth.getValueText();
 
         loopSpinner = (Spinner) findViewById(R.id.loopSpinner);

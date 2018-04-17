@@ -1,10 +1,11 @@
 package ru.laz.knitting.custom_view;
 
 import android.content.Context;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+
+import ru.laz.knitting.R;
 
 /**
  * Created by Dmitry Lazarev on 16.04.2018.
@@ -32,14 +33,15 @@ public class LoopSelector {
 
     public static Spinner genLoopSelector(Context context, Spinner inputSpinner){
 
-        ArrayList<SpinnerItem> arrSiList = new ArrayList<>();
+        ArrayList<LoopTypeElement> arrSiList = new ArrayList<>();
 
-        arrSiList.add(new SpinnerItem("цобако"));
-        arrSiList.add(new SpinnerItem("кысь"));
-        arrSiList.add(new SpinnerItem("борода"));
+        arrSiList.add(new LoopTypeElement("цобако", "кусако"));
+        arrSiList.add(new LoopTypeElement("кысь", "брысь"));
+        arrSiList.add(new LoopTypeElement("борода", "холода"));
 
-        ArrayAdapter<SpinnerItem> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, arrSiList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        CustomLoopTypeSpinnerAdapter adapter = new CustomLoopTypeSpinnerAdapter(context, R.layout.loop_selector_spinner_item, arrSiList);
+        adapter.setDropDownViewResource(R.layout.loop_selector_spinner_item);
         inputSpinner.setAdapter(adapter);
 
         return inputSpinner;
