@@ -3,6 +3,8 @@ package ru.laz.knitting.custom_view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -39,10 +41,14 @@ public class ParameterEntry extends LinearLayout {
         initDescription(descrTextStr);
         initHelpButton(helpTextStr);
         valueText = (EditText) findViewById(R.id.editTextValue);
+        valueText.setHint("0");
     }
 
 
 
+        public void addTextChangedListener(android.text.TextWatcher watcher) {
+        valueText.addTextChangedListener(watcher);
+        }
 
 
     private void initDescription(String descr){
@@ -57,6 +63,7 @@ public class ParameterEntry extends LinearLayout {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getContext(), helpText,Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP|Gravity.RIGHT, 0, 0);
                 toast.show();
             }
         });
@@ -70,6 +77,20 @@ public class ParameterEntry extends LinearLayout {
         ta.recycle();
     }
 
+
+    public int getValueInt(){
+    String val = valueText.getText().toString();
+    int ret = 0;
+    if (val.length() > 0) {
+        try {
+            ret = Integer.parseInt(val);
+        } catch (NumberFormatException nfe) {
+            Log.e("NUMBER FORMAT EXCEPT", val);
+            ret = 0;
+        }
+    }
+    return ret;
+    }
 
     public String getValueText() {
         return valueText.getText().toString();

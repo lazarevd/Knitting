@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/db1_root"
     android:layout_width="match_parent"
@@ -34,6 +33,7 @@
                 custom:description="@string/pullover_width"
                 custom:help="@string/pullover_width_help"
                 custom:value="" />
+
             <ru.laz.knitting.custom_view.ParameterEntry
                 android:id="@+id/paramentry_height"
                 android:layout_width="match_parent"
@@ -41,6 +41,7 @@
                 custom:description="@string/pullover_height"
                 custom:help="@string/pullover_height_help"
                 custom:value="" />
+
             <ru.laz.knitting.custom_view.ParameterEntry
                 android:id="@+id/paramentry_sleeve"
                 android:layout_width="match_parent"
@@ -56,6 +57,14 @@
                 android:layout_weight="1"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="293dp" />
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="result"
+                tools:layout_editor_absoluteX="163dp"
+                tools:layout_editor_absoluteY="246dp" />
 
 
         </LinearLayout>

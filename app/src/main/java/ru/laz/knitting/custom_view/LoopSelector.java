@@ -35,10 +35,11 @@ public class LoopSelector {
 
         ArrayList<LoopTypeElement> arrSiList = new ArrayList<>();
 
-        arrSiList.add(new LoopTypeElement("цобако", "кусако"));
-        arrSiList.add(new LoopTypeElement("кысь", "брысь"));
-        arrSiList.add(new LoopTypeElement("борода", "холода"));
-
+        arrSiList.add(new LoopTypeElement("Super Bulky", "8 пет/10 см", "test"));
+        arrSiList.add(new LoopTypeElement("Bulky", "12 пет/10 см", "test"));
+        arrSiList.add(new LoopTypeElement("Bulky", "14 пет/10 см", "test"));
+        arrSiList.add(new LoopTypeElement("Heavy worsted", "16 пет/10 см", "test"));
+        arrSiList.add(new LoopTypeElement("Heavy worsted", "18 пет/10 см", "test"));
 
         CustomLoopTypeSpinnerAdapter adapter = new CustomLoopTypeSpinnerAdapter(context, R.layout.loop_selector_spinner_item, arrSiList);
         adapter.setDropDownViewResource(R.layout.loop_selector_spinner_item);

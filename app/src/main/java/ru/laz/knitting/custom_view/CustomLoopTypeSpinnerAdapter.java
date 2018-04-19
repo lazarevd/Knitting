@@ -1,6 +1,8 @@
 package ru.laz.knitting.custom_view;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -46,15 +48,20 @@ public class CustomLoopTypeSpinnerAdapter extends ArrayAdapter<String>{
     private View createItemView(int position, View convertView, ViewGroup parent){
         final View view = mInflater.inflate(mResource, parent, false);
 
-        TextView leftT = (TextView) view.findViewById(R.id.spinTextLeft);
-        TextView rigthT = (TextView) view.findViewById(R.id.spinTextRight);
-        ImageView iView = (ImageView) view.findViewById(R.id.spinImage);
-        
+        TextView loopName = (TextView) view.findViewById(R.id.spinTextLeft);
+        TextView loopDescr = (TextView) view.findViewById(R.id.spinTextRight);
+        ImageView loopImage = (ImageView) view.findViewById(R.id.spinImage);
+
+        int resID = mContext.getResources().getIdentifier("test", "drawable", mContext.getPackageName());
+
+        Bitmap imBit = BitmapFactory.decodeResource(mContext.getResources(),resID);
+
+        loopImage.setImageBitmap(imBit);
 
         LoopTypeElement offerData = items.get(position);
 
-        leftT.setText(offerData.getImageLoopType());
-        rigthT.setText(offerData.getLoopType());
+        loopName.setText(offerData.getLoopName());
+        loopDescr.setText(offerData.getLoopDescr());
 
         return view;
     }

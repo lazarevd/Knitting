@@ -5,28 +5,38 @@ package ru.laz.knitting.custom_view;
  */
 public class LoopTypeElement {
 
-    private String loopType;
-    private String imageLoopType;
+    private String loopName;
+    private String loopDescr;
+    private String loopImg;
 
 
-    public LoopTypeElement(String loopT, String imgLoop) {
-        loopType = loopT;
-        imageLoopType = imgLoop;
+    public LoopTypeElement(String loopName, String loopDescr, String loopImg) {
+        this.loopName = loopName;
+        this.loopDescr = loopDescr;
+        this.loopImg = loopImg;
     }
 
-    public void setLoopType(String loopType) {
-        this.loopType = loopType;
+    public void setLoopName(String loopName) {
+        this.loopName = loopName;
     }
 
-    public void setImageLoopType(String imageLoopType) {
-        this.imageLoopType = imageLoopType;
+    public void setLoopDescr(String loopDescr) {
+        this.loopDescr = loopDescr;
     }
 
-    public String getLoopType() {
-        return loopType;
+    public void setLoopImg(String loopImg) {
+        this.loopImg = loopImg;
     }
 
-    public String getImageLoopType() {
-        return imageLoopType;
+    public String getLoopName() {
+        return loopName;
+    }
+
+    public String getLoopDescr() {
+        return loopDescr;
+    }
+
+    public String getLoopImg() {
+        return loopImg;
     }
 }
