@@ -16,10 +16,10 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             <ru.laz.knitting.custom_view.ParameterEntry
                 android:id="@+id/paramentry_width"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 custom:description="@string/pullover_width"
                 custom:help="@string/pullover_width_help"
                 custom:value="" />
@@ -37,7 +37,7 @@
             <ru.laz.knitting.custom_view.ParameterEntry
                 android:id="@+id/paramentry_height"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 custom:description="@string/pullover_height"
                 custom:help="@string/pullover_height_help"
                 custom:value="" />
@@ -45,29 +45,37 @@
             <ru.laz.knitting.custom_view.ParameterEntry
                 android:id="@+id/paramentry_sleeve"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 custom:description="@string/pullover_sleeve"
                 custom:help="@string/pullover_sleeve_help"
                 custom:value="" />
 
-            <Spinner
-                android:id="@+id/loopSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="293dp" />
 
-            <TextView
-                android:id="@+id/resultText"
+            <ru.laz.knitting.custom_view.YarnEntry
+                android:id="@+id/yarnEntry"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="result"
-                tools:layout_editor_absoluteX="163dp"
-                tools:layout_editor_absoluteY="246dp" />
+                android:layout_height="wrap_content" />
+
+            <ru.laz.knitting.custom_view.YarnWeight
+                android:id="@+id/yarnWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Spinner
+                android:id="@+id/loopSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ru.laz.knitting.custom_view.ResultView
+                android:id="@+id/resultView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>
+
+
     </ScrollView>
 
 

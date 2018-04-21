@@ -52,13 +52,15 @@ public class CustomLoopTypeSpinnerAdapter extends ArrayAdapter<String>{
         TextView loopDescr = (TextView) view.findViewById(R.id.spinTextRight);
         ImageView loopImage = (ImageView) view.findViewById(R.id.spinImage);
 
-        int resID = mContext.getResources().getIdentifier("test", "drawable", mContext.getPackageName());
+        LoopTypeElement offerData = items.get(position);
+
+        int resID = mContext.getResources().getIdentifier(offerData.getLoopImg(), "drawable", mContext.getPackageName());
 
         Bitmap imBit = BitmapFactory.decodeResource(mContext.getResources(),resID);
 
         loopImage.setImageBitmap(imBit);
 
-        LoopTypeElement offerData = items.get(position);
+
 
         loopName.setText(offerData.getLoopName());
         loopDescr.setText(offerData.getLoopDescr());

@@ -4,6 +4,12 @@
 
     <!--общее-->
     <string name="result_label">результат:</string>
+    <string name="yarn_rows">рядов</string>
+    <string name="yarn_cols">петель в ряду</string>
+    <string name="yarn_help">Введите количество петель по вертикали и горизонтали в отрезке 10 см.</string>
+    <string name="result_descr">Результат: </string>
+    <string name="yarn_weght_descr">Масса 50 см: </string>
+    <string name="yarn_weght_help">Измерьте массу 50 см пряжи</string>
 
     <!--свитер-->
     <string name="sleeve">рукав</string>

@@ -35,11 +35,12 @@ public class LoopSelector {
 
         ArrayList<LoopTypeElement> arrSiList = new ArrayList<>();
 
-        arrSiList.add(new LoopTypeElement("Super Bulky", "8 пет/10 см", "test"));
-        arrSiList.add(new LoopTypeElement("Bulky", "12 пет/10 см", "test"));
-        arrSiList.add(new LoopTypeElement("Bulky", "14 пет/10 см", "test"));
-        arrSiList.add(new LoopTypeElement("Heavy worsted", "16 пет/10 см", "test"));
-        arrSiList.add(new LoopTypeElement("Heavy worsted", "18 пет/10 см", "test"));
+        arrSiList.add(new LoopTypeElement("Резинки", "+10%", "kos_dummy"));
+        arrSiList.add(new LoopTypeElement("Косы/араны", "+13%", "kos_dummy"));
+        arrSiList.add(new LoopTypeElement("Рельефные", "+8%", "kos_dummy"));
+        arrSiList.add(new LoopTypeElement("Узоры", "+5%", "kos_dumm"));
+        arrSiList.add(new LoopTypeElement("Гладь", "+0%", "kos_dummy"));
+        arrSiList.add(new LoopTypeElement("Ажуры", "+10%", "kos_dummy"));
 
         CustomLoopTypeSpinnerAdapter adapter = new CustomLoopTypeSpinnerAdapter(context, R.layout.loop_selector_spinner_item, arrSiList);
         adapter.setDropDownViewResource(R.layout.loop_selector_spinner_item);

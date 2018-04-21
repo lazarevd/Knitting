@@ -2,13 +2,13 @@ package ru.laz.knitting.custom_view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +17,7 @@ import ru.laz.knitting.R;
 /**
  * Created by Dmitry Lazarev on 12.04.2018.
  */
-public class ParameterEntry extends LinearLayout {
+public class ParameterEntry extends ConstraintLayout {
 
 
     String descrTextStr = "";
@@ -38,36 +38,39 @@ public class ParameterEntry extends LinearLayout {
         super(context, attrs, 0);
         View.inflate(context, R.layout.parameter_entry, this);
         linkAttrs(context, attrs);
-        initDescription(descrTextStr);
-        initHelpButton(helpTextStr);
+        init(helpTextStr, descrTextStr);
         valueText = (EditText) findViewById(R.id.editTextValue);
         valueText.setHint("0");
     }
 
 
 
-        public void addTextChangedListener(android.text.TextWatcher watcher) {
-        valueText.addTextChangedListener(watcher);
-        }
-
-
-    private void initDescription(String descr){
-        descriptionText = (TextView) findViewById(R.id.textDescr);
-        descriptionText.setText(descr);
+    public ParameterEntry(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
-    private void initHelpButton(final String helpText) {
-        ImageButton helpBttn = (ImageButton) findViewById(R.id.helpBtn);
-        helpBttn.setImageResource(R.drawable.help_button);
-        helpBttn.setOnClickListener(new OnClickListener() {
+    private void init(final String hlpTxt, String dscrTxt) {
+        helpBtn = (ImageButton) findViewById(R.id.helpBtn);
+        helpBtn.setImageResource(R.drawable.help_button);
+        helpBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getContext(), helpText,Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP|Gravity.RIGHT, 0, 0);
+                Toast toast = Toast.makeText(getContext(), hlpTxt,Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
                 toast.show();
             }
         });
+
+        descriptionText = (TextView) findViewById(R.id.textDescr);
+        descriptionText.setText(dscrTxt);
+        valueText = (EditText) findViewById(R.id.editTextValue);
+        valueText.setHint("0");
     }
+
+
+    public void addTextChangedListener(android.text.TextWatcher watcher) {
+        valueText.addTextChangedListener(watcher);
+        }
 
 
     private void linkAttrs(Context context, AttributeSet attrs){

@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.HashMap;
 
 import ru.laz.knitting.custom_view.LoopSelector;
 import ru.laz.knitting.custom_view.ParameterEntry;
+import ru.laz.knitting.custom_view.ResultView;
+import ru.laz.knitting.custom_view.YarnEntry;
 
 
 public class Pullover extends BaseActivity {
@@ -18,9 +19,10 @@ public class Pullover extends BaseActivity {
     ParameterEntry paeWidth;
     ParameterEntry paeHeight;
     ParameterEntry paeSleeve;
+    YarnEntry yarnEntry;
+    Spinner loopSelector;
 
-    TextView resultView;
-    Spinner loopSpinner;
+    ResultView resultView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,10 @@ public class Pullover extends BaseActivity {
         paeWidth = (ParameterEntry) findViewById(R.id.paramentry_width);
         paeHeight = (ParameterEntry) findViewById(R.id.paramentry_height);
         paeSleeve = (ParameterEntry) findViewById(R.id.paramentry_sleeve);
-
-
+        yarnEntry = (YarnEntry) findViewById(R.id.yarnEntry);
+        resultView = (ResultView) findViewById(R.id.resultView);
+        loopSelector = (Spinner) findViewById(R.id.loopSelector);
+        LoopSelector.genLoopSelector(this, loopSelector);
 
 
 
@@ -48,7 +52,7 @@ public class Pullover extends BaseActivity {
             }
             @Override
             public void afterTextChanged(android.text.Editable s) {
-                resultView.setText("" + count());
+                resultView.setResult("" + count());
             }
         });
 
@@ -61,7 +65,7 @@ public class Pullover extends BaseActivity {
             }
             @Override
             public void afterTextChanged(android.text.Editable s) {
-                resultView.setText("" + count());
+                resultView.setResult("" + count());
             }
         });
 
@@ -74,25 +78,28 @@ public class Pullover extends BaseActivity {
             }
             @Override
             public void afterTextChanged(android.text.Editable s) {
-                resultView.setText("" + count());
+                resultView.setResult("" + count());
             }
         });
 
-        resultView = (TextView) findViewById(R.id.resultText);
-
-
-
-        resultView.setOnClickListener(new View.OnClickListener() {
+        yarnEntry.addTextChangedListener(new TextWatcher() {//TODO Callback
             @Override
-            public void onClick(View v) {
-
-                resultView.setText("" + count());
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(android.text.Editable s) {
+                resultView.setResult("" + count());
             }
         });
 
 
-        loopSpinner = (Spinner) findViewById(R.id.loopSpinner);
-        loopSpinner = LoopSelector.genLoopSelector(this, loopSpinner);
+
+
+
+
 
     }
 
@@ -101,8 +108,8 @@ public class Pullover extends BaseActivity {
         int wid = paeWidth.getValueInt();
         int heg = paeHeight.getValueInt();
         int sle = paeSleeve.getValueInt();
-
-        return wid*heg + (2*sle);
+        int dens = yarnEntry.getYarnDencity();
+        return (wid*heg + (2*sle))*dens;
     }
 
 
