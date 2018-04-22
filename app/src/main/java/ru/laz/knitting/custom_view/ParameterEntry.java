@@ -32,6 +32,7 @@ public class ParameterEntry extends ConstraintLayout {
     public ParameterEntry(Context context) {
         super(context);
         View.inflate(context, R.layout.parameter_entry, this);
+        init(helpTextStr, descrTextStr);
     }
 
     public ParameterEntry(Context context, AttributeSet attrs) {
@@ -39,8 +40,6 @@ public class ParameterEntry extends ConstraintLayout {
         View.inflate(context, R.layout.parameter_entry, this);
         linkAttrs(context, attrs);
         init(helpTextStr, descrTextStr);
-        valueText = (EditText) findViewById(R.id.editTextValue);
-        valueText.setHint("0");
     }
 
 
@@ -64,7 +63,7 @@ public class ParameterEntry extends ConstraintLayout {
         descriptionText = (TextView) findViewById(R.id.textDescr);
         descriptionText.setText(dscrTxt);
         valueText = (EditText) findViewById(R.id.editTextValue);
-        valueText.setHint("0");
+        valueText.setHint(R.string.measure_unit_cm);
     }
 
 

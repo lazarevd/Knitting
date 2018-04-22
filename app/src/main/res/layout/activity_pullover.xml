@@ -61,6 +61,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <ru.laz.knitting.custom_view.SpokeDiameter
+                android:id="@+id/spokeDiameter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <Spinner
                 android:id="@+id/loopSelector"

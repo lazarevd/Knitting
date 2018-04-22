@@ -32,7 +32,7 @@ public class ResultView extends ConstraintLayout {
     }
 
     public void setResult(String resStr) {
-        valueTxt.setText(resStr + "cm");
+        valueTxt.setText(resStr + " " + getResources().getString(R.string.result_unit));
     }
 
     private void init(Context con) {

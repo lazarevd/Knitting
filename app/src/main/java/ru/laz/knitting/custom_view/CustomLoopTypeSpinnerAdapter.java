@@ -49,7 +49,6 @@ public class CustomLoopTypeSpinnerAdapter extends ArrayAdapter<String>{
         final View view = mInflater.inflate(mResource, parent, false);
 
         TextView loopName = (TextView) view.findViewById(R.id.spinTextLeft);
-        TextView loopDescr = (TextView) view.findViewById(R.id.spinTextRight);
         ImageView loopImage = (ImageView) view.findViewById(R.id.spinImage);
 
         LoopTypeElement offerData = items.get(position);
@@ -63,7 +62,6 @@ public class CustomLoopTypeSpinnerAdapter extends ArrayAdapter<String>{
 
 
         loopName.setText(offerData.getLoopName());
-        loopDescr.setText(offerData.getLoopDescr());
 
         return view;
     }

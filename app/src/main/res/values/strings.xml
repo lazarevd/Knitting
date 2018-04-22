@@ -3,13 +3,19 @@
     <string name="title_activity_main2">Main2Activity</string>
 
     <!--общее-->
-    <string name="result_label">результат:</string>
-    <string name="yarn_rows">рядов</string>
-    <string name="yarn_cols">петель в ряду</string>
+    <string name="result_label">Результат:</string>
+    <string name="result_descr">Длина указана примерно /n для более точного расчета рекомендуется вязать образец</string>
+    <string name="result_unit"> метров</string>
+    <string name="yarn_rows">Рядов:</string>
+    <string name="yarn_cols">Петель в ряду:</string>
     <string name="yarn_help">Введите количество петель по вертикали и горизонтали в отрезке 10 см.</string>
-    <string name="result_descr">Результат: </string>
-    <string name="yarn_weght_descr">Масса 50 см: </string>
-    <string name="yarn_weght_help">Измерьте массу 50 см пряжи</string>
+    <string name="yarn_weght_descr">Длинна 50 грамм в метрах: </string>
+    <string name="yarn_weght_help">Плотность пряжи должна быть указана на этикетке</string>
+    <string name="spoke_size_descr">Диаметр спиц в мм:</string>
+    <string name="measure_unit_m">м</string>
+    <string name="measure_unit_cm">см</string>
+    <string name="measure_unit_mm">мм</string>
+
 
     <!--свитер-->
     <string name="sleeve">рукав</string>

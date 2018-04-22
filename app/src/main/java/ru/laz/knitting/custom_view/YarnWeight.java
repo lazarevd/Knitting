@@ -35,6 +35,11 @@ public class YarnWeight extends ConstraintLayout {
     }
 
 
+
+    public void addTextChangedListener(android.text.TextWatcher watcher) {
+        valueTxt.addTextChangedListener(watcher);
+    }
+
     private void init(final Context con) {
         View.inflate(con, R.layout.yarn_weight_layout, this);
         valueTxt = (EditText) findViewById(R.id.editTextValue);

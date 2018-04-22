@@ -11,15 +11,19 @@ import java.util.HashMap;
 import ru.laz.knitting.custom_view.LoopSelector;
 import ru.laz.knitting.custom_view.ParameterEntry;
 import ru.laz.knitting.custom_view.ResultView;
+import ru.laz.knitting.custom_view.SpokeDiameter;
 import ru.laz.knitting.custom_view.YarnEntry;
+import ru.laz.knitting.custom_view.YarnWeight;
 
 
-public class Pullover extends BaseActivity {
+public class Pullover extends BaseActivity  {
 
     ParameterEntry paeWidth;
     ParameterEntry paeHeight;
     ParameterEntry paeSleeve;
     YarnEntry yarnEntry;
+    YarnWeight yarnWeight;
+    SpokeDiameter spokeDiameter;
     Spinner loopSelector;
 
     ResultView resultView;
@@ -38,12 +42,13 @@ public class Pullover extends BaseActivity {
         paeSleeve = (ParameterEntry) findViewById(R.id.paramentry_sleeve);
         yarnEntry = (YarnEntry) findViewById(R.id.yarnEntry);
         resultView = (ResultView) findViewById(R.id.resultView);
+        yarnWeight = (YarnWeight) findViewById(R.id.yarnWeight);
         loopSelector = (Spinner) findViewById(R.id.loopSelector);
+        spokeDiameter = (SpokeDiameter) findViewById(R.id.spokeDiameter);
         LoopSelector.genLoopSelector(this, loopSelector);
 
 
-
-        paeWidth.addTextChangedListener(new TextWatcher() {//TODO Callback
+        TextWatcher texWatch = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -54,46 +59,18 @@ public class Pullover extends BaseActivity {
             public void afterTextChanged(android.text.Editable s) {
                 resultView.setResult("" + count());
             }
-        });
+        };
 
-        paeHeight.addTextChangedListener(new TextWatcher() {//TODO Callback
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-            @Override
-            public void afterTextChanged(android.text.Editable s) {
-                resultView.setResult("" + count());
-            }
-        });
 
-        paeSleeve.addTextChangedListener(new TextWatcher() {//TODO Callback
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-            @Override
-            public void afterTextChanged(android.text.Editable s) {
-                resultView.setResult("" + count());
-            }
-        });
+        paeWidth.addTextChangedListener(texWatch);
 
-        yarnEntry.addTextChangedListener(new TextWatcher() {//TODO Callback
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-            @Override
-            public void afterTextChanged(android.text.Editable s) {
-                resultView.setResult("" + count());
-            }
-        });
+        paeHeight.addTextChangedListener(texWatch);
+
+        paeSleeve.addTextChangedListener(texWatch);
+
+        yarnEntry.addTextChangedListener(texWatch);
+
+        yarnWeight.addTextChangedListener(texWatch);
 
 
 
