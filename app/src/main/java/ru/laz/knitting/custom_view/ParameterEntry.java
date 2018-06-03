@@ -49,20 +49,20 @@ public class ParameterEntry extends ConstraintLayout {
     }
 
     private void init(final String hlpTxt, String dscrTxt) {
-        helpBtn = (ImageButton) findViewById(R.id.helpBtn);
+        helpBtn = findViewById(R.id.helpBtn);
         helpBtn.setImageResource(R.drawable.help_button);
         helpBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getContext(), hlpTxt,Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
+                toast.setGravity(Gravity.TOP|Gravity.START, 0, 0);
                 toast.show();
             }
         });
 
-        descriptionText = (TextView) findViewById(R.id.textDescr);
+        descriptionText = findViewById(R.id.textDescr);
         descriptionText.setText(dscrTxt);
-        valueText = (EditText) findViewById(R.id.editTextValue);
+        valueText = findViewById(R.id.editTextValue);
         valueText.setHint(R.string.measure_unit_cm);
     }
 
