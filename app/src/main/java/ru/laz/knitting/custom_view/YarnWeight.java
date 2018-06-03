@@ -42,21 +42,21 @@ public class YarnWeight extends ConstraintLayout {
 
     private void init(final Context con) {
         View.inflate(con, R.layout.yarn_weight_layout, this);
-        valueTxt = (EditText) findViewById(R.id.editTextValue);
+        valueTxt = findViewById(R.id.editTextValue);
 
 
-        helpBtn = (ImageButton) findViewById(R.id.yarnHelpBtn);
+        helpBtn = findViewById(R.id.yarnHelpBtn);
         helpBtn.setImageResource(R.drawable.help_button);
         helpBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(con, R.string.yarn_weght_help,Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
+                toast.setGravity(Gravity.TOP|Gravity.START, 0, 0);
                 toast.show();
             }
         });
 
-        valueTxt = (EditText) findViewById(R.id.editTextValue);
+        valueTxt = findViewById(R.id.editTextValue);
         valueTxt.setText("10");
 
     }

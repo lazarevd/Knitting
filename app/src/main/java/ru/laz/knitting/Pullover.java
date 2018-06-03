@@ -37,14 +37,14 @@ public class Pullover extends BaseActivity  {
         //ImageView imageView = (ImageView) topView.findViewById(R.id.topImageView);
         //setBitmapToImageView(imageView, this.imageBitmap, "normal", bitmapCoords, screenDensity);
 
-        paeWidth = (ParameterEntry) findViewById(R.id.paramentry_width);
-        paeHeight = (ParameterEntry) findViewById(R.id.paramentry_height);
-        paeSleeve = (ParameterEntry) findViewById(R.id.paramentry_sleeve);
-        yarnEntry = (YarnEntry) findViewById(R.id.yarnEntry);
-        resultView = (ResultView) findViewById(R.id.resultView);
-        yarnWeight = (YarnWeight) findViewById(R.id.yarnWeight);
-        loopSelector = (Spinner) findViewById(R.id.loopSelector);
-        spokeDiameter = (SpokeDiameter) findViewById(R.id.spokeDiameter);
+        paeWidth = findViewById(R.id.paramentry_width);
+        paeHeight = findViewById(R.id.paramentry_height);
+        paeSleeve = findViewById(R.id.paramentry_sleeve);
+        yarnEntry = findViewById(R.id.yarnEntry);
+        resultView = findViewById(R.id.resultView);
+        yarnWeight = findViewById(R.id.yarnWeight);
+        loopSelector = findViewById(R.id.loopSelector);
+        spokeDiameter = findViewById(R.id.spokeDiameter);
         LoopSelector.genLoopSelector(this, loopSelector);
 
 

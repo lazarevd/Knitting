@@ -40,8 +40,8 @@ public class SpokeDiameter extends ConstraintLayout {
 
 
     private void init() {
-        descrText = (TextView) findViewById(R.id.spoke_descr);
-        valueText = (TextView) findViewById(R.id.spoke_value);
+        descrText = findViewById(R.id.spoke_descr);
+        valueText = findViewById(R.id.spoke_value);
         valueText.setHint(R.string.measure_unit_mm);
     }
 

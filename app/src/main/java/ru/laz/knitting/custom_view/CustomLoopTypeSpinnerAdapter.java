@@ -25,7 +25,7 @@ public class CustomLoopTypeSpinnerAdapter extends ArrayAdapter<String>{
     private final List<LoopTypeElement> items;
     private final int mResource;
 
-    public CustomLoopTypeSpinnerAdapter(@NonNull Context context, @LayoutRes int resource,
+    protected CustomLoopTypeSpinnerAdapter(@NonNull Context context, @LayoutRes int resource,
                               @NonNull List objects) {
         super(context, resource, 0, objects);
 
@@ -48,8 +48,8 @@ public class CustomLoopTypeSpinnerAdapter extends ArrayAdapter<String>{
     private View createItemView(int position, View convertView, ViewGroup parent){
         final View view = mInflater.inflate(mResource, parent, false);
 
-        TextView loopName = (TextView) view.findViewById(R.id.spinTextLeft);
-        ImageView loopImage = (ImageView) view.findViewById(R.id.spinImage);
+        TextView loopName = view.findViewById(R.id.spinTextLeft);
+        ImageView loopImage =  view.findViewById(R.id.spinImage);
 
         LoopTypeElement offerData = items.get(position);
 
