@@ -148,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/height" />
+                        android:text="@string/pullover_height" />
 
                     <EditText
                         android:id="@+id/height_edit"
@@ -175,7 +175,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/width" />
+                        android:text="@string/pullover_width" />
 
                     <EditText
                         android:id="@+id/width_edit"
@@ -202,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/sleeve" />
+                        android:text="@string/pullover_sleeve" />
 
                     <EditText
                         android:id="@+id/sleeve_edit"

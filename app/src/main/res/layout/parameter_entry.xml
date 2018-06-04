@@ -11,6 +11,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            style="@style/LabelText"
             android:id="@+id/textDescr"
             android:layout_width="0dp"
             android:layout_height="31dp"

@@ -4,8 +4,8 @@
 
     <!--общее-->
     <string name="result_label">Результат:</string>
-    <string name="result_descr">Длина указана примерно /n для более точного расчета рекомендуется вязать образец</string>
-    <string name="result_unit"> метров</string>
+    <string name="result_descr">Длина указана примерно. Для более точного расчета рекомендуется вязать образец</string>
+    <string name="result_unit">Метров</string>
     <string name="yarn_rows">Рядов:</string>
     <string name="yarn_cols">Петель в ряду:</string>
     <string name="yarn_help">Введите количество петель по вертикали и горизонтали в отрезке 10 см.</string>
@@ -18,14 +18,9 @@
 
 
     <!--свитер-->
-    <string name="sleeve">рукав</string>
-    <string name="width">ширина</string>
-    <string name="height">длинна</string>
-    <string name="title_activity_img_test">ImgTest</string>
-
-    <string name="pullover_sleeve">рукав</string>
-    <string name="pullover_width">ширина</string>
-    <string name="pullover_height">длинна</string>
+    <string name="pullover_sleeve">Рукав</string>
+    <string name="pullover_width">Ширина</string>
+    <string name="pullover_height">Длинна</string>
     <string name="pullover_sleeve_help">Длинна рукава от манжеты до подмышки</string>
     <string name="pullover_width_help">Ширина в районе груди</string>
     <string name="pullover_height_help">Длинна от воротника до нижней кромки(хз как оно зовется)</string>

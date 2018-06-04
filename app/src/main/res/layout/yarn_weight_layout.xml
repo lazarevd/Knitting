@@ -20,6 +20,7 @@
         app:srcCompat="@drawable/help_button" />
 
     <TextView
+        style="@style/LabelText"
         android:id="@+id/textDescr"
         android:layout_width="0dp"
         android:layout_height="30dp"
